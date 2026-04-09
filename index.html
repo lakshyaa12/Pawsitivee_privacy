@@ -24,6 +24,7 @@
 body {
   background: var(--bg);
   color: var(--text);
+  overflow-x: hidden;
 }
 
 /* HERO */
@@ -32,22 +33,39 @@ body {
   padding: 120px 20px 100px;
   background: radial-gradient(circle at top, #ff6b6b, #ff4d4d);
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  top: -150px;
+  left: -150px;
+  animation: float 8s ease-in-out infinite;
 }
 
 .hero img {
   width: 80px;
   margin-bottom: 20px;
+  animation: fadeUp 1s ease forwards;
 }
 
 .hero h1 {
   font-size: 52px;
   font-weight: 700;
+  animation: fadeUp 1.2s ease forwards;
 }
 
 .hero p {
   margin-top: 12px;
   font-size: 20px;
   opacity: 0.95;
+  animation: fadeUp 1.4s ease forwards;
 }
 
 .button {
@@ -60,10 +78,11 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
+  animation: fadeUp 1.6s ease forwards;
 }
 
 .button:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* SECTION */
@@ -71,6 +90,14 @@ body {
   max-width: 1000px;
   margin: auto;
   padding: 60px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .center {
@@ -84,6 +111,11 @@ body {
   border-radius: 28px;
   padding: 30px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
 }
 
 /* TEXT */
@@ -109,7 +141,11 @@ p {
   border-radius: 20px;
   background: white;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  font-weight: 500;
+  transition: 0.3s;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
 }
 
 /* STEPS */
@@ -135,13 +171,7 @@ p {
 }
 
 .screenshot:hover {
-  transform: scale(1.05);
-}
-
-/* LINKS */
-a {
-  color: var(--primary);
-  text-decoration: none;
+  transform: scale(1.08);
 }
 
 /* FOOTER */
@@ -149,7 +179,23 @@ a {
   text-align: center;
   padding: 50px 20px;
   color: #8e8e93;
-  font-size: 14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
 }
 </style>
 </head>
@@ -158,7 +204,7 @@ a {
 
 <!-- HERO -->
 <div class="hero">
-  <img src="AppLogo.png" alt="App Logo">
+  <img src="AppLogo.png">
   <h1>Pawsitivee</h1>
   <p>First Aid for Street Animals</p>
   <a href="#" class="button">Download App</a>
@@ -168,7 +214,7 @@ a {
 <div class="section center">
   <div class="card">
     <h2>Help When It Matters Most 🐾</h2>
-    <p>Be ready to act in emergencies and make a real difference for street animals.</p>
+    <p>Be ready to act in emergencies and make a real difference.</p>
   </div>
 </div>
 
@@ -176,7 +222,7 @@ a {
 <div class="section">
   <div class="card">
     <h2>The Problem</h2>
-    <p>Street animals often suffer from injuries, dehydration, heatstroke, and emergencies. Most people want to help but don’t know what to do — or worse, accidentally make the situation worse.</p>
+    <p>Street animals suffer injuries and emergencies. People want to help but lack knowledge.</p>
   </div>
 </div>
 
@@ -184,19 +230,18 @@ a {
 <div class="section">
   <div class="card">
     <h2>Our Solution</h2>
-    <p>Pawsitivee provides simple, step-by-step first aid guidance that anyone can follow — helping users take the right action quickly and safely.</p>
+    <p>Step-by-step first aid guidance that anyone can follow instantly.</p>
   </div>
 </div>
 
 <!-- FEATURES -->
 <div class="section">
   <h2>Key Features</h2>
-
   <div class="features">
     <div class="feature-box">🚑 Emergency guides</div>
     <div class="feature-box">✅ Do’s & Don’ts</div>
-    <div class="feature-box">❤️ Vital check tools</div>
-    <div class="feature-box">📴 Works offline</div>
+    <div class="feature-box">❤️ Vital tools</div>
+    <div class="feature-box">📴 Offline support</div>
   </div>
 </div>
 
@@ -204,17 +249,16 @@ a {
 <div class="section">
   <h2>How It Works</h2>
   <div class="card steps">
-    <p>1. Select the animal</p>
-    <p>2. Choose the issue</p>
-    <p>3. Follow step-by-step guidance</p>
-    <p>4. Check vital signs</p>
+    <p>1. Select animal</p>
+    <p>2. Choose issue</p>
+    <p>3. Follow steps</p>
+    <p>4. Check vitals</p>
   </div>
 </div>
 
 <!-- SCREENSHOTS -->
 <div class="section">
   <h2>Experience the App</h2>
-
   <div class="screens">
     <img src="Screenshot1.png" class="screenshot">
     <img src="Screenshot2.png" class="screenshot">
@@ -232,52 +276,24 @@ a {
   </div>
 </div>
 
-<!-- SUPPORT -->
-<div class="section">
-  <div class="card">
-    <h2>Support</h2>
-    <p>Email: <a href="mailto:laksxyz@email.com">laksxyz@email.com</a></p>
-  </div>
-</div>
-
-<!-- PRIVACY -->
-<div class="section">
-  <div class="card">
-    <h2>Privacy Policy</h2>
-
-    <p><strong>Effective Date:</strong> April 2026</p>
-
-    <p>Pawsitivee does not collect, store, or share personal data.</p>
-
-    <h3>Usage Data</h3>
-    <p>No analytics or tracking is used.</p>
-
-    <h3>Offline Use</h3>
-    <p>The app works completely offline.</p>
-
-    <h3>Third Parties</h3>
-    <p>No third-party data collection services are used.</p>
-
-    <h3>Children’s Privacy</h3>
-    <p>Safe for all users.</p>
-
-    <h3>Contact</h3>
-    <p><a href="mailto:laksxyz@email.com">laksxyz@email.com</a></p>
-  </div>
-</div>
-
-<!-- DISCLAIMER -->
-<div class="section">
-  <div class="card">
-    <h2>Disclaimer</h2>
-    <p>This app provides general guidance and is not a substitute for professional veterinary care.</p>
-  </div>
-</div>
-
 <!-- FOOTER -->
 <div class="footer">
-  © 2026 Pawsitivee • Built with ❤️ for animals
+  © 2026 Pawsitivee • Built with ❤️
 </div>
+
+<script>
+const sections = document.querySelectorAll(".section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+sections.forEach(sec => observer.observe(sec));
+</script>
 
 </body>
 </html>
