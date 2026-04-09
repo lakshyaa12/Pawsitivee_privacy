@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawsitive Support</title>
+
+<style>
+:root {
+  --primary: #ff4d4d;
+  --primary-soft: #ff6b6b;
+  --bg: #f2f2f7;
+  --card: #ffffff;
+  --text: #1c1c1e;
+  --subtext: #6e6e73;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HERO (matches splash screen) */
+.hero {
+  background: linear-gradient(135deg, #ff4d4d, #ff6b6b);
+  color: white;
+  text-align: center;
+  padding: 80px 20px 60px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.logo {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.hero p {
+  margin-top: 8px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* CONTENT */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* CARD (matches your app cards) */
+.card {
+  background: var(--card);
+  border-radius: 22px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* HEADINGS */
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+p {
+  color: var(--subtext);
+  line-height: 1.6;
+}
+
+/* EMAIL LINK */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 13px;
+  color: #8e8e93;
+  padding: 30px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="logo">🐾</div>
+  <h1>Pawsitive</h1>
+  <p>First Aid for Street Animals</p>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <div class="card">
+    <h2>Support</h2>
+    <p>Need help or want to share feedback?</p>
+    <p>Email: <a href="laksxyz@email.com">laksxyz@email.com</a></p>
+  </div>
+
+  <div class="card">
+    <h2>Privacy Policy</h2>
+    <p>Pawsitive does not collect, store, or share any personal data.</p>
+    <p>The app works fully offline and does not track users.</p>
+  </div>
+
+  <div class="card">
+    <h2>Disclaimer</h2>
+    <p>This app provides general guidance for helping animals in emergency situations.</p>
+    <p>It is not a substitute for professional veterinary advice.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Pawsitive. Made with care ❤️
+</div>
+
+</body>
+</html>
