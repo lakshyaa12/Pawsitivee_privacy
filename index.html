@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pawsitive Support</title>
+<title>Pawsitive</title>
 
 <style>
 :root {
@@ -19,7 +19,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
@@ -27,78 +27,67 @@ body {
   color: var(--text);
 }
 
-/* HERO (matches splash screen) */
+/* HERO */
 .hero {
   background: linear-gradient(135deg, #ff4d4d, #ff6b6b);
   color: white;
   text-align: center;
   padding: 80px 20px 60px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-
-.logo {
-  font-size: 50px;
-  margin-bottom: 10px;
 }
 
 .hero h1 {
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 42px;
 }
 
 .hero p {
-  margin-top: 8px;
-  font-size: 16px;
+  margin-top: 10px;
   opacity: 0.9;
 }
 
-/* CONTENT */
+/* SECTION */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   padding: 20px;
 }
 
-/* CARD (matches your app cards) */
 .card {
   background: var(--card);
   border-radius: 22px;
-  padding: 22px;
-  margin-bottom: 18px;
+  padding: 24px;
+  margin-bottom: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-  transition: 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
 }
 
 /* HEADINGS */
 h2 {
-  font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* TEXT */
 p {
   color: var(--subtext);
   line-height: 1.6;
 }
 
-/* EMAIL LINK */
-a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* IMAGES */
+.screenshot {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* FOOTER */
 .footer {
   text-align: center;
-  font-size: 13px;
+  padding: 30px;
   color: #8e8e93;
-  padding: 30px 0;
 }
 </style>
 </head>
@@ -107,37 +96,75 @@ a {
 
 <!-- HERO -->
 <div class="hero">
-  <div class="logo">🐾</div>
-  <h1>Pawsitive</h1>
+  <h1>Pawsitive 🐾</h1>
   <p>First Aid for Street Animals</p>
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
+  <!-- PROBLEM -->
+  <div class="card">
+    <h2>The Problem</h2>
+    <p>Street animals often suffer from injuries, dehydration, heatstroke, and other emergencies. Most people want to help, but don’t know what to do — or worse, accidentally make the situation worse.</p>
+  </div>
+
+  <!-- SOLUTION -->
+  <div class="card">
+    <h2>Our Solution</h2>
+    <p>Pawsitive provides simple, step-by-step first aid guidance that anyone can follow. It helps users take the right action quickly and safely during animal emergencies.</p>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="card">
+    <h2>Key Features</h2>
+    <p>• Emergency guides for common situations</p>
+    <p>• Clear Do’s & Don’ts to avoid mistakes</p>
+    <p>• Vital check tools like breathing rate</p>
+    <p>• Works offline — no internet required</p>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="card">
+    <h2>How It Works</h2>
+    <p>1. Select the animal</p>
+    <p>2. Choose the issue</p>
+    <p>3. Follow step-by-step guidance</p>
+    <p>4. Use vitals to assess condition</p>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="card">
+    <h2>App Screens</h2>
+    <div class="grid">
+      <img src="screenshot1.png" class="screenshot">
+      <img src="screenshot2.png" class="screenshot">
+      <img src="screenshot3.png" class="screenshot">
+      <img src="screenshot4.png" class="screenshot">
+    </div>
+  </div>
+
+  <!-- SUPPORT -->
   <div class="card">
     <h2>Support</h2>
-    <p>Need help or want to share feedback?</p>
-    <p>Email: <a href="laksxyz@email.com">laksxyz@email.com</a></p>
+    <p>Email: <a href="mailto:laksxyz@email.com">laksxyz@email.com</a></p>
   </div>
 
+  <!-- PRIVACY -->
   <div class="card">
     <h2>Privacy Policy</h2>
-    <p>Pawsitive does not collect, store, or share any personal data.</p>
-    <p>The app works fully offline and does not track users.</p>
+    <p>Pawsitive does not collect or store any personal data. The app works fully offline.</p>
   </div>
 
+  <!-- DISCLAIMER -->
   <div class="card">
     <h2>Disclaimer</h2>
-    <p>This app provides general guidance for helping animals in emergency situations.</p>
-    <p>It is not a substitute for professional veterinary advice.</p>
+    <p>This app provides general guidance and is not a substitute for professional veterinary care.</p>
   </div>
 
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-  © 2026 Pawsitive. Made with care ❤️
+  © 2026 Pawsitive
 </div>
 
 </body>
